@@ -26,16 +26,26 @@ async function getPokeData(){
         
         for (let i = 0; i < pokemons.length; i++){
             document.getElementById('gridGallery').innerHTML += `
-            <div id="${pokemons[i].id}">
-                <p>${pokemons[i].name}</p>
+            <a id="${pokemons[i].id}" class="border flex flex-col items-center rounded-lg hover:scale-125 clickable">
                 <img src="${pokemons[i].sprite}" />
-            </div>
-            `
-        }
-       
+                <p class="capitalize">${pokemons[i].name}</p>
+            </a>
+            `;
+        };
+
+        // Add event listeners for dynamically created clickable elements
+        document.querySelectorAll('.clickable').forEach(a => {
+            a.addEventListener('click', function () {
+                const linkId = this.id;
+                window.location.href = `pokeDetails.html?id=${linkId}`; // Redirect to details page
+            });
+        });
+
     } catch(error){
         console.error(error.message);
     }
 }
 
 getPokeData();
+
+
