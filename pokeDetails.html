@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="./pokeapi.js"></script>
+    <!-- <script src="./pokeapi.js"></script> -->
 </head>
 <body class="font-[Roboto]" id="body">
     <div class="container border w-[768px] mx-auto">
@@ -17,8 +17,14 @@
         </div>
 
         <div>
-            <h1>hello</h1>
+            <a href="/index.html">back</a>
         </div>
     </div>
 </body>
 </html>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const id = idFromUrl = params.get('id');
+    console.log(id);
+</script>
